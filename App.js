@@ -1,31 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const heading = React.createElement("div", { id: "" }, [
-  React.createElement("div", {}, [
-    React.createElement("p", {}, "Children"),
-    React.createElement("p", {}, "Children"),
-  ]),
-  React.createElement("h1", {}, "Sibling"),
-  React.createElement("div", {}, [
-    React.createElement("p", {}, "Children"),
-    React.createElement("p", {}, "Children"),
-  ]),
-  ,
-]);
+
+const Title = () => <h1>Title Component</h1>;
+const reactElement = <p>This is a react element</p>;
+
+const HeadingComponent = () => {
+  return (
+    <div>
+      {reactElement}
+      <Title />
+      <h1>This is a React Component</h1>;
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
-
-/**
- * div
- *      div
- *          child1
- *          child2
- *      /div
- *                  h1 /h1
- *      div
- *          child3
- *          child4
- *      /div
- * /div
- */
+root.render(<HeadingComponent />);
